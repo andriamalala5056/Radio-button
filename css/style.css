@@ -1,0 +1,65 @@
+html, body {
+    margin: 0;
+    overflow-x: hidden;
+}
+
+body {
+    background-color: #f7f7f7;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    align-items: center;
+    flex-direction: column;
+}
+
+.radio-container {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+    padding-left: 40px;
+    font-family: "Courier New", Courier;
+    font-size: 45px;
+    color: #b8b8b8;
+}
+
+.radio-container input {
+    display: none;
+}
+
+.radio-container .cercle {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background-color: #b8b8b8;
+    border: 2px solid #8c8c8c;
+    border-radius: 25px;
+    position: absolute;
+    left: 0;
+    top: 9px;
+    box-shadow: 1px 2px 5px 0.5px;
+    transition: 0.3s;
+}
+
+.radio-container .cercle::after {
+    content: "";
+    width: 11px;
+    height: 11px;
+    border-radius: 11px;
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: 0.3s;
+}
+
+.radio-container input:checked + .cercle {
+    background-color: #fffce7;
+    transition: 0.3s;
+}
+
+.radio-container input:checked + .cercle::after {
+    background-color: #67869e;
+    transition: 0.3s;
+}
